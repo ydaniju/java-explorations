@@ -1,7 +1,6 @@
 package com.ydaniju.lil.learningspring.business;
 
 import com.ydaniju.lil.learningspring.data.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -74,6 +73,26 @@ public class ReservationService {
         });
 
         return guestList;
+    }
+
+    public Guest addGuest(Guest guest) {
+        if (guest == null) {
+            throw new RuntimeException("Guest cannot be null");
+        }
+
+        return this.guestRepository.save(guest);
+    }
+
+    public List<Room> getRooms() {
+        Iterable<Room> rooms = this.roomRepository.findAll();
+
+        List<Room> roomList = new ArrayList<>();
+
+        rooms.forEach(room -> {
+            roomList.add(room);
+        });
+
+        return roomList;
     }
 }
 
