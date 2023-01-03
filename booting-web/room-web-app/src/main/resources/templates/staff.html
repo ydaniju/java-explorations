@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landon Hotel | Staff</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Employee Number</th>
+    <th>first Name</th>
+    <th>Last name</th>
+    <th>Position</th>
+  </tr>
+
+  <tr th:each="staffMember:${staff}">
+    <td th:text="${staffMember.employeeNumber}">Employee Number</td>
+    <td th:text="${staffMember.lastName}">first Name</td>
+    <td th:text="${staffMember.firstName}">Last name</td>
+    <td th:text="${staffMember.position}">Position</td>
+  </tr>
+</table>
+</body>
+</html>
