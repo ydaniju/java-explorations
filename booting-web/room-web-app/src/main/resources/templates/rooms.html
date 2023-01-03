@@ -7,15 +7,17 @@
 <body>
 <table>
     <tr>
+        <th>Room Id</th>
         <th>Room Number</th>
         <th>Room Name</th>
         <th>Bed Info</th>
     </tr>
 
     <tr th:each="room:${rooms}">
-        <td th:text="${room.number}">Number</td>
-        <td th:text="${room.name}">Name</td>
-        <td th:text="${room.info}">Info</td>
+        <td th:text="${room.getId()}">Number</td>
+        <td th:text="${room.getNumber()}">Number</td>
+        <td th:text="${room.getName()}">Name</td>
+        <td th:text="${room.getInfo()}">Info</td>
     </tr>
 </table>
 </body>

@@ -7,6 +7,7 @@
 <body>
 <table>
   <tr>
+    <th>Employee Id</th>
     <th>Employee Number</th>
     <th>first Name</th>
     <th>Last name</th>
@@ -14,10 +15,11 @@
   </tr>
 
   <tr th:each="staffMember:${staff}">
-    <td th:text="${staffMember.employeeNumber}">Employee Number</td>
-    <td th:text="${staffMember.lastName}">first Name</td>
-    <td th:text="${staffMember.firstName}">Last name</td>
-    <td th:text="${staffMember.position}">Position</td>
+    <td th:text="${staffMember.getId()}">Employee Number</td>
+    <td th:text="${staffMember.getEmployeeNumber()}">Employee Number</td>
+    <td th:text="${staffMember.getLastName()}">first Name</td>
+    <td th:text="${staffMember.getFirstName()}">Last name</td>
+    <td th:text="${staffMember.getPosition()}">Position</td>
   </tr>
 </table>
 </body>
