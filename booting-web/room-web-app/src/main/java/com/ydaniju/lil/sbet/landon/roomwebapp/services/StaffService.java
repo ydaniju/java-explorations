@@ -1,5 +1,6 @@
 package com.ydaniju.lil.sbet.landon.roomwebapp.services;
 
+import com.ydaniju.lil.sbet.landon.roomwebapp.models.Position;
 import com.ydaniju.lil.sbet.landon.roomwebapp.models.StaffMember;
 
 import java.util.ArrayList;
@@ -11,7 +12,13 @@ public class StaffService {
 
     static {
         for (int i = 0; i < 10; i++) {
-            StaffMember staffMember = new StaffMember(UUID.randomUUID(), "lastName" + i, "firstName " + i, "P" + i, "No" + i);
+            StaffMember staffMember = new StaffMember(
+                    UUID.randomUUID(),
+                    "lastName" + i,
+                    "firstName " + i,
+                    Position.CONCIERGE,
+                    "No" + i
+            );
             staff.add(staffMember);
         }
     }

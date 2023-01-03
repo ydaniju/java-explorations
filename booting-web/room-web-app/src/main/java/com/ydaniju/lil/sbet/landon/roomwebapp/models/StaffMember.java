@@ -6,10 +6,10 @@ public class StaffMember {
     private UUID id;
     private String lastName;
     private String firstName;
-    private String position;
+    private Position position;
     private String employeeNumber;
 
-    public StaffMember(UUID id, String lastName, String firstName, String position, String employeeNumber) {
+    public StaffMember(UUID id, String lastName, String firstName, Position position, String employeeNumber) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -41,11 +41,11 @@ public class StaffMember {
         this.firstName = firstName;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
