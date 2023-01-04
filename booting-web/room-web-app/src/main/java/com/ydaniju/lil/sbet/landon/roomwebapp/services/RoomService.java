@@ -16,7 +16,7 @@ public class RoomService {
             rooms.add(new Room(UUID.randomUUID(), "Room " + i, "R" + i, "Q"));
         }
     }
-    public static List<Room> getAllRooms() {
+    public List<Room> getAllRooms() {
         return rooms;
     }
 }
