@@ -38,7 +38,12 @@
 			<artifactId>assertj-core</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.velopayments</groupId>
+            <artifactId>java-spring-resttemplate</artifactId>
+            <version>2.32.2</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
