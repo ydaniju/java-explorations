@@ -66,7 +66,7 @@ class MyLinkedListTest {
         list.add("second");
 
         assertEquals(list.head.value, "first");
-        assertEquals(list.head.next, new MyNode<>("second"));
+        assertEquals(list.head.next, new MyNode<>("second", list.head, null));
         assertEquals(2, list.length);
     }
 
@@ -76,8 +76,23 @@ class MyLinkedListTest {
 
         assertEquals(0, list.length);
 
-        list.remove();
+        list.removeTail();
 
         assertEquals(0, list.length);
+    }
+
+    @Test
+    void removeLastItem() {
+        MyLinkedList<String> list = new MyLinkedList<>();
+        list.add("1");
+        list.add("hi");
+        list.add("there");
+
+        System.out.println(list);
+        list.removeTail();
+        System.out.println(list);
+
+        assertEquals(2, list.length);
+        assertEquals(list.tail().value, "hi");
     }
 }

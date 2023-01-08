@@ -1,6 +1,7 @@
 package com.ydaniju.hello;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class MyNode<T> {
     T value;
@@ -28,6 +29,9 @@ public class MyNode<T> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(value, next, prev);
+        T previousVal = Optional.ofNullable(prev).isPresent() ? prev.value : null;
+        T nextVal = Optional.ofNullable(next).isPresent() ? next.value : null;
+
+        return Objects.hash(value, previousVal, nextVal);
     }
 }

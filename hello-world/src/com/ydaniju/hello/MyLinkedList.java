@@ -1,5 +1,8 @@
 package com.ydaniju.hello;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyLinkedList<T> {
     public MyNode<T> head;
     public Integer length = 0;
@@ -26,11 +29,34 @@ public class MyLinkedList<T> {
             }
 
             currentNode.next = newNode;
+            newNode.prev = currentNode;
         }
         incrementLength();
     }
 
-    void remove() {}
+    MyNode<T> tail() {
+        MyNode<T> currentNode = this.head;
+
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        return currentNode;
+    }
+
+    void removeTail() {
+        if (this.empty()) return;
+
+        MyNode<T> currentNode = this.head;
+
+        while (currentNode.next != null && currentNode.next.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = null;
+
+        decrementLength();
+    }
 
     Boolean empty() {
         return this.head == null;
@@ -38,5 +64,31 @@ public class MyLinkedList<T> {
 
     private void incrementLength() {
         this.length += 1;
+    }
+
+    private void decrementLength() {
+        this.length -= 1;
+    }
+
+    private List<T> traverse() {
+        List<T> values = new ArrayList<>();
+        MyNode<T> currentNode = this.head;
+
+        while (currentNode != null) {
+            values.add(currentNode.value);
+
+            currentNode = currentNode.next;
+        }
+
+        return values;
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedList{" +
+                "head=" + head +
+                ", length=" + length +
+                ", values=" + this.traverse() +
+                '}';
     }
 }
